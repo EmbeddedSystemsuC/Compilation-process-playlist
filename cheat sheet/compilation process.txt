@@ -1,0 +1,15 @@
+to use the compiler you have 3 ways:
+                                    1- open the git bash at the location of the compiler
+                                    2- adding this instruction everytime you open the git bash: export PATH="C:\Program Files (x86)\GNU Tools ARM Embedded\7 2017-q4-major\bin":$PATH , search for the path of the compiler on your computer and replace with one in the instruction
+                                    3- simply add the path of the compiler to the enviroment variables
+
+second, the compilation process:
+file.c -> file.i: $ arm-none-eabi-gcc.exe -E file.c > file.i 
+file.i -> file.s  $ arm-none-eabi-gcc.exe -S -mcpu=*ARCHNAME* file.c > file.s
+file.s -> file.o  $ arm-none-eabi-as.exe  -mcpu=*ARCHNAME* file.s -o file.o
+
+file.c -> file.o  $ arm-none-eabi-gcc.exe -g -c -mcpu=*ARCHNAME*  -I . file.c -o file.o      //-g is the debug option , if you have paths to include add this paths instead of the dot next to the -I , -c means execute the full compiler
+
+third, linking time:
+
+$arm-none-eabi-ld -T linkerscript.ld -Map=output.map file.o startup.o -o image.elf
