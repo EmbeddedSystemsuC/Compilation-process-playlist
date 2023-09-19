@@ -1,0 +1,11 @@
+to see the sections inside the object file use this instruction:
+  $ arm-none-eabi-objdump.exe -h file.o -> sections_file.txt
+  or
+  $ arm-none-eabi-objdump.exe -D file.o > file.s
+
+to see the symbol table inside the object file use this instruction:
+   $ arm-none-eabi-nm.exe file.o
+
+
+to read the elf image use this instruction:
+  $arm-none-eabi-readelf.exe -a file.elf
