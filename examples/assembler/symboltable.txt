@@ -1,0 +1,7 @@
+00000004 D array
+00000000 R const_integer_x
+00000000 T infilefunction
+00000000 D initialized_integer_x
+         U notinfilefunction
+00000004 C uninitialized_integer_x
+00000000 W weakinfilefunction
